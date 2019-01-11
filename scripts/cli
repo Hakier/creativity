@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+
+const check = require('../src/check');
+
+const [, , moves] = process.argv;
+
+if (typeof moves !== 'string') {
+    console.info(`You must provide moves, eg.: \n${process.argv[1]} ""\n${process.argv[1]} "WSDAQ"`);
+    process.exit(1);
+}
+
+console.info(`${check(moves)} times the vehicle crosses the starting point`);
